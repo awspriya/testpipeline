@@ -1,0 +1,26 @@
+node 
+{                                              
+def mvnhome
+stage ("checkout code")
+{
+git 'https://github.com/awspriya/course.git'
+mvnhome=tool 'testmvn'
+}
+stage ("compile")
+{
+sh "'${mvnhome}/bin/mvn' compile"
+}
+stage ("test")
+{
+sh "'${mvnhome}/bin/mvn' test"
+}
+stage ("Build")
+{
+sh "'${mvnhome}/bin/mvn' clean package"
+}
+}
+
+
+
+
+
