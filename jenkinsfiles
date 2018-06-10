@@ -17,6 +17,7 @@ sh "'${mvnhome}/bin/mvn' test"
 stage ("Build")
 {
 sh "'${mvnhome}/bin/mvn' clean package"
+cp -p /var/lib/jenkins/workspace/exapmplepipeline/target/course.war  /home/ec2-user/apache-tomcat-8.5.31/webapps/manager/
 }
 }
 
